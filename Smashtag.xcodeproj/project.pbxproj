@@ -20,6 +20,7 @@
 		3BD83D6C1C0726AE00D738C1 /* TweetDetailsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BD83D6B1C0726AE00D738C1 /* TweetDetailsTableViewController.swift */; };
 		3BD83D6E1C078CA500D738C1 /* ImageTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BD83D6D1C078CA500D738C1 /* ImageTableViewCell.swift */; };
 		3BD83D701C078CBA00D738C1 /* LabelTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BD83D6F1C078CBA00D738C1 /* LabelTableViewCell.swift */; };
+		3BD83D721C07B35800D738C1 /* ZoomImageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BD83D711C07B35800D738C1 /* ZoomImageViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -38,6 +39,7 @@
 		3BD83D6B1C0726AE00D738C1 /* TweetDetailsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TweetDetailsTableViewController.swift; sourceTree = "<group>"; };
 		3BD83D6D1C078CA500D738C1 /* ImageTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageTableViewCell.swift; sourceTree = "<group>"; };
 		3BD83D6F1C078CBA00D738C1 /* LabelTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LabelTableViewCell.swift; sourceTree = "<group>"; };
+		3BD83D711C07B35800D738C1 /* ZoomImageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZoomImageViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -70,14 +72,11 @@
 		3BD040201C0636C400EAD45F /* Smashtag */ = {
 			isa = PBXGroup;
 			children = (
-				3BD040381C0638B000EAD45F /* TweetTableViewController.swift */,
-				3BD83D6B1C0726AE00D738C1 /* TweetDetailsTableViewController.swift */,
+				3BD83D741C07B37200D738C1 /* Controllers */,
 				3BD040251C0636C400EAD45F /* Main.storyboard */,
+				3BD83D731C07B36500D738C1 /* TableCells */,
 				3BD040441C063DA000EAD45F /* Tweeter */,
 				3BD040331C0636E900EAD45F /* Unused Files */,
-				3BD83D6D1C078CA500D738C1 /* ImageTableViewCell.swift */,
-				3BD83D6F1C078CBA00D738C1 /* LabelTableViewCell.swift */,
-				3BD040451C06501D00EAD45F /* TweetTableViewCell.swift */,
 			);
 			path = Smashtag;
 			sourceTree = "<group>";
@@ -102,6 +101,26 @@
 				3BD0403F1C063D3600EAD45F /* MediaItem.swift */,
 			);
 			name = Tweeter;
+			sourceTree = "<group>";
+		};
+		3BD83D731C07B36500D738C1 /* TableCells */ = {
+			isa = PBXGroup;
+			children = (
+				3BD83D6D1C078CA500D738C1 /* ImageTableViewCell.swift */,
+				3BD83D6F1C078CBA00D738C1 /* LabelTableViewCell.swift */,
+				3BD040451C06501D00EAD45F /* TweetTableViewCell.swift */,
+			);
+			name = TableCells;
+			sourceTree = "<group>";
+		};
+		3BD83D741C07B37200D738C1 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				3BD040381C0638B000EAD45F /* TweetTableViewController.swift */,
+				3BD83D6B1C0726AE00D738C1 /* TweetDetailsTableViewController.swift */,
+				3BD83D711C07B35800D738C1 /* ZoomImageViewController.swift */,
+			);
+			name = Controllers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -177,6 +196,7 @@
 			files = (
 				3BD040221C0636C400EAD45F /* AppDelegate.swift in Sources */,
 				3BD040421C063D3600EAD45F /* Tweet.swift in Sources */,
+				3BD83D721C07B35800D738C1 /* ZoomImageViewController.swift in Sources */,
 				3BD040391C0638B000EAD45F /* TweetTableViewController.swift in Sources */,
 				3BD83D6E1C078CA500D738C1 /* ImageTableViewCell.swift in Sources */,
 				3BD040401C063D3600EAD45F /* User.swift in Sources */,

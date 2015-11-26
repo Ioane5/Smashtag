@@ -132,18 +132,18 @@ class TweetDetailsTableViewController: UITableViewController {
         let section = sections![indexPath.section]
         switch section {
         case .Media(let media):
-            //TODO make it cassini!
+            performSegueWithIdentifier("Zoom image", sender: media[indexPath.row].url)
             break
         case .MentionSection(let selectionType,let keywords):
             let keyword = keywords[indexPath.row].keyword
             if selectionType == "urls" {
-                let url = NSURL(fileReferenceLiteral: keyword)
-                UIApplication.sharedApplication().openURL(url)
+                let url = NSURL(string: keyword)
+                if url != nil {
+                    UIApplication.sharedApplication().openURL(url!)
+                }
             } else {
-            
-            
+                performSegueWithIdentifier("Go back", sender: keyword)
             }
-            unwindForSegue(<#T##unwindSegue: UIStoryboardSegue##UIStoryboardSegue#>, towardsViewController: <#T##UIViewController#>)
         }
     }
     
@@ -182,14 +182,26 @@ class TweetDetailsTableViewController: UITableViewController {
     }
     */
     
-    /*
+    
     // MARK: - Navigation
     
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-    // Get the new view controller using segue.destinationViewController.
-    // Pass the selected object to the new view controller.
+        switch segue.identifier!{
+        case "Go back":
+            if let unwindVC = segue.destinationViewController as? TweetTableViewController {
+                unwindVC.searchText = sender as? String
+            }
+            break
+        case "Zoom image":
+            if let destionation = segue.destinationViewController as? ZoomImageViewController {
+                destionation.imageUrl =  sender as? NSURL
+            }
+            break
+        default:
+            break
+        }
     }
-    */
+    
     
 }
