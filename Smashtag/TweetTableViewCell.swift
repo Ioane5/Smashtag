@@ -8,6 +8,7 @@
 
 import UIKit
 
+
 class TweetTableViewCell: UITableViewCell {
     
     
@@ -16,6 +17,14 @@ class TweetTableViewCell: UITableViewCell {
     @IBOutlet weak var tweetScreenName: UILabel!
     
     @IBOutlet weak var tweetTextLabel: UILabel!
+    
+    
+    @IBInspectable var hashtagColor : UIColor = UIColor.greenColor()
+    
+    @IBInspectable var usernameColor : UIColor = UIColor.greenColor()
+    
+    @IBInspectable var urlColor : UIColor = UIColor.greenColor()
+    
     
     var tweet : Tweet? {
         didSet {
@@ -26,12 +35,25 @@ class TweetTableViewCell: UITableViewCell {
             // if tweet is not nil let's bind data
             if let tweet = self.tweet {
                 
-                tweetTextLabel?.text = tweet.text
-                if tweetTextLabel?.text != nil {
-                    for _ in tweet.media {
-                        tweetTextLabel.text! += " 📷"
-                    }
+                var tweetText = tweet.text
+                for _ in tweet.media {
+                    tweetText += " 📷"
                 }
+                let attributedText = NSMutableAttributedString(string: tweetText)
+                //let hashTagAttribute = [NSForegroundColorAttributeName : hashtagColor]
+                
+                for hashtag in tweet.hashtags {
+                    attributedText.addAttribute(NSForegroundColorAttributeName, value: hashtagColor, range: hashtag.nsrange)
+                }
+                for url in tweet.urls {
+                    attributedText.addAttribute(NSForegroundColorAttributeName, value: urlColor, range: url.nsrange)
+                }
+                for username in tweet.userMentions {
+                    attributedText.addAttribute(NSForegroundColorAttributeName, value: usernameColor, range: username.nsrange)
+                }                
+                
+                tweetTextLabel?.attributedText = attributedText
+                
                 tweetScreenName?.text = "\(tweet.user)"
                 // if user has profile image
                 if let profileImageURL = tweet.user.profileImageURL {
@@ -50,10 +72,7 @@ class TweetTableViewCell: UITableViewCell {
                         }
                     }
                 }
-                
-                
             }
-            
         }
         
     }

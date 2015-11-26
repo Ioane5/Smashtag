@@ -92,6 +92,7 @@ class TweetTableViewController: UITableViewController, UITextFieldDelegate {
         // self.navigationItem.rightBarButtonItem = self.editButtonItem()
     }
     
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -104,7 +105,6 @@ class TweetTableViewController: UITableViewController, UITextFieldDelegate {
     }
     
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of rows
         return tweets[section].count
     }
     
@@ -121,6 +121,7 @@ class TweetTableViewController: UITableViewController, UITextFieldDelegate {
         
         return cell
     }
+    
     
     /*
     // Override to support conditional editing of the table view.
@@ -157,14 +158,32 @@ class TweetTableViewController: UITableViewController, UITextFieldDelegate {
     }
     */
     
-    /*
+    
     // MARK: - Navigation
+    
+    override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        performSegueWithIdentifier("Show details", sender: tweets[indexPath.section][indexPath.row])
+    }
     
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-    // Get the new view controller using segue.destinationViewController.
-    // Pass the selected object to the new view controller.
+        switch segue.identifier! {
+        case "Show details":
+            
+            var destinationVC : TweetDetailsTableViewController
+            if let navVC = segue.destinationViewController as? UINavigationController {
+                destinationVC = navVC.visibleViewController as! TweetDetailsTableViewController
+            } else {
+                destinationVC = segue.destinationViewController as! TweetDetailsTableViewController
+            }
+            destinationVC.title = searchText
+            if let tweet = sender as? Tweet {
+                destinationVC.tweet = tweet
+            }
+            break
+        default: break
+        }
     }
-    */
+    
     
 }
