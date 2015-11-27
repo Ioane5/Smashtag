@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3B8593B01C086F94007A893C /* RecentSearchesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B8593AF1C086F94007A893C /* RecentSearchesViewController.swift */; };
+		3B8593B41C088AB6007A893C /* RecentsStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B8593B31C088AB6007A893C /* RecentsStore.swift */; };
 		3BD040221C0636C400EAD45F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BD040211C0636C400EAD45F /* AppDelegate.swift */; };
 		3BD040271C0636C400EAD45F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3BD040251C0636C400EAD45F /* Main.storyboard */; };
 		3BD040291C0636C400EAD45F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3BD040281C0636C400EAD45F /* Assets.xcassets */; };
@@ -24,6 +26,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		3B8593AF1C086F94007A893C /* RecentSearchesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecentSearchesViewController.swift; sourceTree = "<group>"; };
+		3B8593B31C088AB6007A893C /* RecentsStore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecentsStore.swift; sourceTree = "<group>"; };
 		3BD0401E1C0636C400EAD45F /* Smashtag.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Smashtag.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3BD040211C0636C400EAD45F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3BD040261C0636C400EAD45F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -74,6 +78,8 @@
 			children = (
 				3BD83D741C07B37200D738C1 /* Controllers */,
 				3BD040251C0636C400EAD45F /* Main.storyboard */,
+				3B8593B31C088AB6007A893C /* RecentsStore.swift */,
+				3BD040211C0636C400EAD45F /* AppDelegate.swift */,
 				3BD83D731C07B36500D738C1 /* TableCells */,
 				3BD040441C063DA000EAD45F /* Tweeter */,
 				3BD040331C0636E900EAD45F /* Unused Files */,
@@ -87,7 +93,6 @@
 				3BD040281C0636C400EAD45F /* Assets.xcassets */,
 				3BD0402A1C0636C400EAD45F /* LaunchScreen.storyboard */,
 				3BD0402D1C0636C400EAD45F /* Info.plist */,
-				3BD040211C0636C400EAD45F /* AppDelegate.swift */,
 			);
 			name = "Unused Files";
 			sourceTree = "<group>";
@@ -119,6 +124,7 @@
 				3BD040381C0638B000EAD45F /* TweetTableViewController.swift */,
 				3BD83D6B1C0726AE00D738C1 /* TweetDetailsTableViewController.swift */,
 				3BD83D711C07B35800D738C1 /* ZoomImageViewController.swift */,
+				3B8593AF1C086F94007A893C /* RecentSearchesViewController.swift */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -203,8 +209,10 @@
 				3BD040411C063D3600EAD45F /* TwitterRequest.swift in Sources */,
 				3BD83D701C078CBA00D738C1 /* LabelTableViewCell.swift in Sources */,
 				3BD040431C063D3600EAD45F /* MediaItem.swift in Sources */,
+				3B8593B41C088AB6007A893C /* RecentsStore.swift in Sources */,
 				3BD83D6C1C0726AE00D738C1 /* TweetDetailsTableViewController.swift in Sources */,
 				3BD040461C06501D00EAD45F /* TweetTableViewCell.swift in Sources */,
+				3B8593B01C086F94007A893C /* RecentSearchesViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

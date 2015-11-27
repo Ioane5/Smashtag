@@ -34,10 +34,9 @@ class ZoomImageViewController: UIViewController ,UIScrollViewDelegate{
                     ScrollView.frame.height/MediaImage.frame.height,
                     ScrollView.frame.width / MediaImage.frame.width )
             }
-            
-            
         }
     }
+    
     var imageUrl : NSURL? {
         didSet {
             image = nil
